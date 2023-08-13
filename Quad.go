@@ -1,13 +1,17 @@
-package piscine
+package main
 
 import (
-	"github.com/01-edu/z01"
+	"fmt"
 )
 
-func QuadE(x_size int, y_size int) {
+func main() {
+	Quad(5, 5) // example
+}
+
+func Quad(x_size int, y_size int) {
 	// these are the definitions. (defining symbols so we can replace them easier)
-	horizontal_rune := 'B'
-	vertical_rune := 'B'
+	horizontal_rune := '*'
+	vertical_rune := '*'
 
 	corner_rune_topleft := 'A'
 	corner_rune_bottomleft := 'C'
@@ -72,8 +76,8 @@ func QuadE(x_size int, y_size int) {
 	// so if it was [5][3] matrix, it would get x 5 and y 3 of the matrix and print the symbol.
 	for _, row := range matrix {
 		for _, r := range row {
-			z01.PrintRune(r)
+			fmt.Print(string(r))
 		}
-		z01.PrintRune('\n')
+		fmt.Printf("\n")
 	}
 }
